@@ -96,7 +96,7 @@ export const Footer: React.FC = () => {
                                 muted
                                 playsInline
                                 className="absolute inset-0 w-full h-full object-cover">
-                                <source src="assets/footer-video.webm" type="video/mp4" />
+                                <source src="/assets/footer-video.webm" type="video/mp4" />
                             </video>
                         </div>
                     </div>

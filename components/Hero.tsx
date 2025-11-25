@@ -24,7 +24,7 @@ export const Hero: React.FC<HeroProps> = ({ onLoaderComplete }) => {
   // CONFIGURATION: VIDEO PATH
   // Paste your video path here. 
   // ---------------------------------------------------------
-  const VIDEO_PATH = "assets/card-video.webm"; 
+  const VIDEO_PATH = "/assets/card-video.webm"; 
 
   // Constants for layout spacing
   const PADDING_TOP = 20; // 20px white offset

@@ -178,7 +178,7 @@ export const Work: React.FC = () => {
                          {
 
                          }<img 
-                            src={`assets/${project.image}`} 
+                            src={`/assets/${project.image}`} 
                             alt={project.title} 
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                             onError={(e) => {
@@ -304,7 +304,7 @@ export const Work: React.FC = () => {
 
                                 {/* IMAGE: BRANDING */}
                                 <div className="anim-scroll w-full aspect-video  rounded-xl flex items-center justify-center relative overflow-hidden group">
-                                    { <img src="assets/branding-hoole.webp" alt="Hoole Branding" className="w-full h-auto block"></img>}
+                                    { <img src="/assets/branding-hoole.webp" alt="Hoole Branding" className="w-full h-auto block"></img>}
                                    
                                 </div>
 
@@ -337,10 +337,10 @@ export const Work: React.FC = () => {
                                 {/* IMAGES: INTERFACE */}
                                 <div className="anim-scroll grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="aspect-[4/3] rounded-xl flex items-center justify-center relative overflow-hidden">
-                                        {<img src="assets/hoole-booking.webp" alt="B2B Booking" className="absolute inset-0 w-full h-full object-cover" />}
+                                        {<img src="/assets/hoole-booking.webp" alt="B2B Booking" className="absolute inset-0 w-full h-full object-cover" />}
                                     </div>
                                     <div className="aspect-[4/3] rounded-xl flex items-center justify-center relative overflow-hidden">
-                                        { <img src="assets/hoole-cover.webp" alt="Portal" className="absolute inset-0 w-full h-full object-cover scale-150" />}
+                                        { <img src="/assets/hoole-cover.webp" alt="Portal" className="absolute inset-0 w-full h-full object-cover scale-150" />}
                                 
                                     </div>
                                 </div>
@@ -420,7 +420,7 @@ export const Work: React.FC = () => {
 
                                 {/* IMAGE: INTERFACE */}
                                 <div className="anim-scroll w-full aspect-video bg-gray-900 border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden group">
-                                    { <img src="assets/eteu-master.webp" alt="Interface" className="absolute inset-0 w-full h-full object-cover" />}
+                                    { <img src="/assets/eteu-master.webp" alt="Interface" className="absolute inset-0 w-full h-full object-cover" />}
                                 </div>
 
                                 {/* Solution */}
@@ -447,10 +447,10 @@ export const Work: React.FC = () => {
                                 {/* IMAGES: UI KIT & FLOW */}
                                 <div className="anim-scroll grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="aspect-[4/3] bg-gray-900 border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden">
-                                        {<img src="assets/eteu-uikit.webp" alt="UI Kit" className="absolute inset-0 w-full h-full object-cover" /> }
+                                        {<img src="/assets/eteu-uikit.webp" alt="UI Kit" className="absolute inset-0 w-full h-full object-cover" /> }
                                     </div>
                                     <div className="aspect-[4/3] bg-gray-900 border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden">
-                                        { <img src="assets/eteu-cover.webp" alt="Flow" className="absolute inset-0 w-full h-full scale-150 object-cover" />}
+                                        { <img src="/assets/eteu-cover.webp" alt="Flow" className="absolute inset-0 w-full h-full scale-150 object-cover" />}
                                     </div>
                                 </div>
 
