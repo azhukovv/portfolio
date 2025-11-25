@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artur Zhukov | Senior Product Designer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Vimeo Player SDK -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+    <!-- Tailwind Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              obsidian: '#050505',
+              glass: 'rgba(0, 0, 0, 0.05)',
+              glassBorder: 'rgba(0, 0, 0, 0.1)',
+            },
+            fontFamily: {
+              sans: ['Suisse Intl','Inter', 'sans-serif'],
+            },
+            letterSpacing: {
+              tightest: '-0.03em',
+            },
+            transitionTimingFunction: {
+              'expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+
+      @font-face {
+        font-family: 'Suisse Intl';
+        src: url('./fonts/Suisse_Intl_Light.ttf') format('truetype'); 
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Suisse Intl';
+        src: url('./fonts/Suisse_Intl_Regular.ttf') format('truetype'); 
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Suisse Intl';
+        src: url('./fonts/Suisse_Intl_Medium.ttf') format('truetype'); 
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Suisse Intl';
+        src: url('./fonts/Suisse_Intl_Bold.ttf') format('truetype'); 
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+
+      body {
+        background-color: #FFFFFF;
+        color: #000000;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* Hide scrollbar for cleaner look */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #FFFFFF;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #000000;
+        border-radius: 3px;
+      }
+
+      /* Swiper Overrides */
+      .swiper-wrapper {
+        transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "gsap": "https://aistudiocdn.com/gsap@^3.13.0",
+    "gsap/": "https://aistudiocdn.com/gsap@^3.13.0/",
+    "swiper/": "https://aistudiocdn.com/swiper@^12.0.3/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@gsap/react": "https://aistudiocdn.com/@gsap/react@^2.1.2",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.469.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
