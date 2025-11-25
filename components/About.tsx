@@ -131,7 +131,7 @@ export const About: React.FC = () => {
                 <p className="anim-text">Since my first design project in 2013, I've worked tirelessly to</p>
             </div>
             <div className="overflow-hidden pb-1">
-                <p className="anim-text">master the craft. from early Photoshop sites to architecting</p>
+                <p className="anim-text">master the craft. From early Photoshop sites to architecting</p>
             </div>
             <div className="overflow-hidden pb-1">
                 <p className="anim-text">digital products, apps, flexible design systems, and brands.</p>
