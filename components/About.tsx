@@ -102,7 +102,7 @@ export const About: React.FC = () => {
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: btn,
-                    start: "top 9%",
+                    start: "top 95%",
                     toggleActions: "play none none reverse"
                 }
             }
