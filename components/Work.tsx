@@ -11,7 +11,7 @@ const projects: ProjectItem[] = [
   {
     id: 1,
     title: "Hoole",
-    category: ":healthcare Humanizing the medical experience.",
+    category: "Healthcare Humanizing the medical experience.",
     // Just the filename; code will prepend "img/"
     image: "hoole-cover.webp", 
     description: "Hoole reimagines the healthcare experience by bridging the gap between patients and providers.",
