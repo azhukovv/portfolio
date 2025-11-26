@@ -157,7 +157,7 @@ export const About: React.FC = () => {
             </h3>
             
             {/* Body Text */}
-            <div className="text-xl md:text-2xl text-gray-600 leading-relaxed font-light flex flex-wrap">
+            <div className="text-xl md:text-2xl text-gray-600 leading-relaxed font-light flex flex-wrap md:leading-10">
                 {splitTextToWords(bodyText)}
             </div>
           </div>
