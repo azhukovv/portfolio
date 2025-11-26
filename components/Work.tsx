@@ -16,7 +16,7 @@ const projects: ProjectItem[] = [
     image: "hoole-cover.webp", 
     description: "Hoole reimagines the healthcare experience by bridging the gap between patients and providers.",
     subtitle: "Healthcare Ecosystem Branding & Product",
-    year: "2021–2024",
+    year: "2022–2024",
     tags: "Branding / Product Design / Design System",
     role_detail: "Senior Product Designer",
     team: "Founders, Managers, Developers"
@@ -284,7 +284,7 @@ export const Work: React.FC = () => {
                                     <div className="w-full md:w-2/3 text-gray-300 text-lg font-light leading-relaxed space-y-6">
                                         <p>
                                             Hoole started as a vaccination and medical checkup service but gradually evolved into a full healthcare ecosystem. 
-                                            I was involved at several stages: first for rebranding in 2021, and later for digital product design in 2023.
+                                            I was involved at several stages: first for rebranding in 2022, and later for digital product design in 2023.
                                         </p>
                                     </div>
                                 </div>
@@ -296,7 +296,7 @@ export const Work: React.FC = () => {
                                     </div>
                                     <div className="w-full md:w-2/3 text-gray-300 text-lg font-light leading-relaxed space-y-6">
                                         <p>
-                                            In 2021, I developed a new visual identity for Hoole. We moved from a generic logo and random colors to a system based on care and technological innovation. 
+                                            In 2022, I developed a new visual identity for Hoole. We moved from a generic logo and random colors to a system based on care and technological innovation. 
                                             The new brand received positive feedback, clients noted it looked modern and inspired trust.
                                         </p>
                                     </div>
