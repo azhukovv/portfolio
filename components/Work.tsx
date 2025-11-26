@@ -303,7 +303,7 @@ export const Work: React.FC = () => {
                                 </div>
 
                                 {/* IMAGE: BRANDING */}
-                                <div className="anim-scroll w-full aspect-video  rounded-xl flex items-center justify-center relative overflow-hidden group">
+                                <div className="anim-scroll w-full aspect-video  rounded-xl flex items-center justify-center relative ">
                                     { <img src="/assets/branding-hoole.webp" alt="Hoole Branding" className="w-full h-auto block"></img>}
                                    
                                 </div>
