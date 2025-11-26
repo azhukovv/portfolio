@@ -34,33 +34,40 @@ const experiences: ExperienceItem[] = [
     }
   ];
 
-// ---------------------------------------------------------
-// CONFIGURATION: RESUME PDF PATH
-// Place your PDF file in the public folder and update this path if needed.
-// ---------------------------------------------------------
-const RESUME_PATH = "assets/A.Zhukov_Resume.pdf"; 
+const RESUME_PATH = "/assets/A.Zhukov_Resume.pdf"; 
 
 export const About: React.FC = () => {
   const containerRef = useRef(null);
 
+  // Helper to split text into words for natural wrapping + animation
+  const splitTextToWords = (text: string) => {
+    return text.split(' ').map((word, index) => (
+      <span key={index} className="inline-block overflow-hidden pb-1 -mb-1 align-top">
+        <span className="anim-word block origin-top-left">{word}&nbsp;</span>
+      </span>
+    ));
+  };
+
   useGSAP(() => {
-    // Animate Text Slide Up (Line by Line)
-    const texts = gsap.utils.toArray('.anim-text');
-    texts.forEach((text: any) => {
-        gsap.fromTo(text, 
-            { y: '100%' },
-            {
-                y: '0%',
-                duration: 1,
-                stagger: 0.1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: text.closest('.overflow-hidden') || text, 
-                    start: "top 95%",
-                    toggleActions: "play none none reverse" 
+    // Animate Words (Batch for performance)
+    const words = gsap.utils.toArray('.anim-word');
+    ScrollTrigger.batch(words as any[], {
+        onEnter: (elements) => {
+            gsap.fromTo(elements, 
+                { y: '100%' },
+                {
+                    y: '0%',
+                    duration: 0.8,
+                    stagger: 0.01,
+                    ease: "power3.out",
+                    overwrite: true
                 }
-            }
-        );
+            );
+        },
+        onLeaveBack: (elements) => {
+             gsap.set(elements, { y: '100%' });
+        },
+        start: "top 95%",
     });
 
     // Animate Experience Rows
@@ -91,10 +98,28 @@ export const About: React.FC = () => {
                 opacity: 1, 
                 y: 0, 
                 duration: 0.8, 
-                delay: 1, // 1 second delay
+                delay: 0.2,
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: btn,
+                    start: "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        )
+    }
+    
+    // Animate Section Title
+    const title = containerRef.current?.querySelector('.anim-title');
+    if(title) {
+        gsap.fromTo(title,
+            { y: '100%' },
+            {
+                y: '0%',
+                duration: 0.8,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: title.parentElement,
                     start: "top 95%",
                     toggleActions: "play none none reverse"
                 }
@@ -108,39 +133,32 @@ export const About: React.FC = () => {
     window.open(RESUME_PATH, '_blank');
   };
 
+  const headline = "It doesn't matter where you start, it's how you progress";
+  const bodyText = `Since my first design project in 2013, I've worked tirelessly to master the craft. From early Photoshop sites to architecting digital products, apps, flexible design systems, and brands. Every step is driven by professional growth, sincere curiosity, and the constant question "How i can make this better?"`;
+
   return (
     <section 
         id="about-section" 
         data-theme="light"
         ref={containerRef} 
-        className="relative w-full py-16 md:py-32 px-5 md:px-10 bg-white text-black z-10"
+        className="relative w-full py-16 md:py-40 px-5 md:px-10 bg-white text-black z-10"
     >
       {/* ABOUT PART */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 md:gap-32 mb-16 md:mb-32">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 md:gap-40 mb-16 md:mb-40">
         <div className="w-full md:w-1/3 overflow-hidden pb-1">
-           <h2 className="anim-text text-sm font-medium uppercase tracking-widest text-gray-400">The Discipline</h2>
+           <h2 className="anim-title block text-sm font-medium uppercase tracking-widest text-gray-400">The Discipline</h2>
         </div>
         
         <div className="w-full md:w-2/3">
-          <h3 className="text-3xl md:text-5xl font-medium leading-[1.1] tracking-tightest mb-10 md:mb-12 text-black">
-            <div className="overflow-hidden pb-2 -mb-2"><span className="block anim-text">It doesn't matter where you start,</span></div>
-            <div className="overflow-hidden pb-2 -mb-2"><span className="block anim-text">it's how you progress.</span></div>
-          </h3>
-          <div className="text-xl md:text-2xl text-gray-600 leading-relaxed font-light space-y-1">
-            <div className="overflow-hidden pb-1">
-                <p className="anim-text">Since my first design project in 2013, I've worked tirelessly to</p>
-            </div>
-            <div className="overflow-hidden pb-1">
-                <p className="anim-text">master the craft. From early Photoshop sites to architecting</p>
-            </div>
-            <div className="overflow-hidden pb-1">
-                <p className="anim-text">digital products, apps, flexible design systems, and brands.</p>
-            </div>
-            <div className="overflow-hidden pb-1">
-                <p className="anim-text">Every step is driven by professional growth, sincere curiosity,</p>
-            </div>
-            <div className="overflow-hidden pb-1">
-                <p className="anim-text">and the constant question "How can we make this better?"</p>
+          <div className="w-full">
+            {/* Headline */}
+            <h3 className="text-3xl md:text-5xl font-medium leading-[1.1] tracking-tightest mb-8 md:mb-12 text-black flex flex-wrap">
+                {splitTextToWords(headline)}
+            </h3>
+            
+            {/* Body Text */}
+            <div className="text-xl md:text-2xl text-gray-600 leading-relaxed font-light flex flex-wrap">
+                {splitTextToWords(bodyText)}
             </div>
           </div>
         </div>
@@ -149,7 +167,7 @@ export const About: React.FC = () => {
       {/* EXPERIENCE PART */}
       <div className="max-w-7xl mx-auto">
          <div className="mb-8 md:mb-16 border-b border-gray-100 pb-6 md:pb-8 overflow-hidden pb-1">
-             <h2 className="anim-text text-sm font-medium uppercase tracking-widest text-gray-400">Experience</h2>
+             <h2 className="anim-title block text-sm font-medium uppercase tracking-widest text-gray-400">Experience</h2>
         </div>
         <div className="flex flex-col">
           {experiences.map((item) => (
